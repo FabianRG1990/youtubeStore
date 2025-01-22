@@ -4,10 +4,11 @@ import { Store } from '@ngrx/store';
 import { TodosPegeActions } from './state';
 
 @Component({
-  selector: 'ako-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'ako-todos',
+    templateUrl: './todos.component.html',
+    styleUrls: ['./todos.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];

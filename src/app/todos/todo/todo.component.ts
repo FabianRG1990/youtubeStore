@@ -10,10 +10,11 @@ import {
 import { Todo } from '../model';
 
 @Component({
-  selector: 'ako-todo',
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'ako-todo',
+    templateUrl: './todo.component.html',
+    styleUrls: ['./todo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TodoComponent implements OnInit {
   @Input() todo!: Todo;

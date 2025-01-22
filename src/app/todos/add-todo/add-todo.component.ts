@@ -7,10 +7,11 @@ import {
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'ako-add-todo',
-  templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'ako-add-todo',
+    templateUrl: './add-todo.component.html',
+    styleUrls: ['./add-todo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AddTodoComponent {
   addForm = new FormGroup({
@@ -20,7 +21,7 @@ export class AddTodoComponent {
   @Output() added = new EventEmitter<string>();
 
   add(): void {
-    this.added.emit(this.addForm.get('description')!.value);
+    this.addForm.get('description')?.value ?? '';
     this.reset();
   }
 
