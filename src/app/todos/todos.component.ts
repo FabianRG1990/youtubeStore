@@ -26,30 +26,22 @@ export class TodosComponent implements OnInit {
   addTodo(description: string): void {
     const newTodo = createTodo(description);
     this.store.dispatch(TodosPegeActions.addTodo({ todo: newTodo }));
-    this.todos = [...this.todos, newTodo];
   }
 
   removeTodo(todoToRemove: Todo): void {
     this.store.dispatch(TodosPegeActions.removeTodo({ todo: todoToRemove }));
-    this.todos = this.todos.filter((todo) => todo.id !== todoToRemove.id);
   }
 
   markAsCompleted(todoToMark: Todo): void {
     this.store.dispatch(TodosPegeActions.marAsCompleted({ todo: todoToMark }));
-    this.todos = this.todos.map((todo) =>
-      todo.id === todoToMark.id ? { ...todo, completed: true } : todo
-    );
   }
 
   markAsPending(todoToMark: Todo): void {
     this.store.dispatch(TodosPegeActions.marAsPending({ todo: todoToMark }));
-    this.todos = this.todos.map((todo) =>
-      todo.id === todoToMark.id ? { ...todo, completed: false } : todo
-    );
+
   }
 
   clearCompleted(): void {
     this.store.dispatch(TodosPegeActions.clearCompleted());
-    this.todos = this.todos.filter((todo) => todo.completed === false);
   }
 }
