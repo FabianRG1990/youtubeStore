@@ -19,7 +19,7 @@ export const todosReducer = createReducer(
   })),
   on(TodosPegeActions.addTodo, (currentState, action) => ({
     ...currentState,
-    todos: [...currentState.todos, action.todo]
+    todos: [...currentState.todos, action.todo],
       })),
   on(TodosPegeActions.removeTodo, (currentState, action) => ({
     ...currentState,

@@ -19,7 +19,7 @@ export class TodosComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(TodosPegeActions.init())
+    this.store.dispatch(TodosPegeActions.init());
   }
 
   addTodo(description: string): void {
