@@ -21,9 +21,13 @@ export class AddTodoComponent {
   @Output() added = new EventEmitter<string>();
 
   add(): void {
-    this.addForm.get('description')?.value ?? '';
-    this.reset();
+    const description = this.addForm.get('description')?.value;
+    if (description) {
+      this.added.emit(description);
+      this.reset();
+    }
   }
+
 
   reset(): void {
     this.addForm.reset({ description: '' });
