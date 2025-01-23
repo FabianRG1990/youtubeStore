@@ -2,7 +2,7 @@ import { createReducer, on } from "@ngrx/store";
 import { initialTodos, Todo } from "../model";
 import { TodosPegeActions } from ".";
 
-
+export const todosStateFeatureKey = 'todosState';
 export interface TodosState {
   todos: Todo[];
 }
